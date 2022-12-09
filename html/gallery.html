@@ -6,8 +6,10 @@
     <title>Галерея</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../scripts/page_loading.js"></script>
+    <script src="../scripts/get_images.js"></script>
 </head>
 <body>
+  <div id="preloader"></div>
     <header class="header">
         <h1>
         <div class="leftstr">Рик Санчез</div>
@@ -22,6 +24,7 @@
       </header>
       <main>
         <img src="../images/f2.jpg">
+        <ul class="posts"></ul>
       </main>
       <footer>
         <script src="../scripts/menu_lighting.js"></script>
@@ -33,5 +36,19 @@
         </p>
         <p>© Web 2022</p>
       </footer>
+      <script>
+        function sleep(milliseconds) {
+          const date = Date.now();
+          let currentDate = null;
+          do {
+            currentDate = Date.now();
+          } while (currentDate - date < milliseconds);
+        }
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function() {
+          sleep(2000);
+          loader.style.display = "none";
+        })
+      </script>
 </body>
 </html>

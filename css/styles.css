@@ -194,3 +194,20 @@ li
 .to-do-title {
   color:#fff;
 }
+
+#preloader {
+  background: #fff url(../images/loader.gif) no-repeat center center;
+  background-size: 5%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+}
+
+li {
+  width: 50%;
+  height: 50%;
+}
