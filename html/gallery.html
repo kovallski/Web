@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </head>
-  <body>
+  <body class=".container">
     <div id="preloader"></div>
     <header class="header">
       <h1>
@@ -74,7 +74,6 @@
       }
       var loader = document.getElementById("preloader");
       window.addEventListener("load", function () {
-        sleep(100);
         loader.style.display = "none";
       });
     </script>
