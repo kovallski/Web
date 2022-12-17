@@ -1,54 +1,84 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Какое-то описание">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Какое-то описание" />
     <title>Галерея</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
     <script src="../scripts/page_loading.js"></script>
     <script src="../scripts/get_images.js"></script>
-</head>
-<body>
-  <div id="preloader"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <div id="preloader"></div>
     <header class="header">
-        <h1>
+      <h1>
         <div class="leftstr">Рик Санчез</div>
         <div class="rightstr">
           <div class="header-menu">
-            <a id = "nav" title="Тык" href="../index.html">Визитка |</a>
+            <a id="nav" title="Тык" href="../index.html">Визитка |</a>
             <a title="Тык" href="gallery.html">Галерея |</a>
             <a title="Тык" href="plans.html">Планы |</a>
           </div>
         </div>
-        </h1>
-      </header>
-      <main>
-        <img src="../images/f2.jpg">
-        <ul class="posts"></ul>
-      </main>
-      <footer>
-        <script src="../scripts/menu_lighting.js"></script>
-        <div class="page-time">Loading time: <div class="loadTime"></div></div>
-        <p>
-            <a href="https://t.me/lizkovalski"><img src="../images/telegram.png" class = "icons" alt=""></a>
-            &nbsp
-            <a href="https://github.com/kovallski"><img src="../images/github.png" class = "icons" alt=""></a>
-        </p>
-        <p>© Web 2022</p>
-      </footer>
-      <script>
-        function sleep(milliseconds) {
-          const date = Date.now();
-          let currentDate = null;
-          do {
-            currentDate = Date.now();
-          } while (currentDate - date < milliseconds);
-        }
-        var loader = document.getElementById("preloader");
-        window.addEventListener("load", function() {
-          sleep(2000);
-          loader.style.display = "none";
-        })
-      </script>
-</body>
+      </h1>
+    </header>
+    <main>
+      <img src="../images/f2.jpg" />
+      <ul class="posts"></ul>
+      <div class="mySwiper">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <script src="../scripts/swiper.js"></script>
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          width="640"
+          height="364"
+          data-setup="{}"
+        >
+          <source src="https://youtu.be/YHkjM3bWDyw" type="video/youtube" />
+        </video>
+    </main>
+    <footer>
+      <script src="../scripts/menu_lighting.js"></script>
+      <div class="page-time">
+        Loading time:
+        <div class="loadTime"></div>
+      </div>
+      <p>
+        <a href="https://t.me/lizkovalski"
+          ><img src="../images/telegram.png" class="icons" alt=""
+        /></a>
+        &nbsp
+        <a href="https://github.com/kovallski"
+          ><img src="../images/github.png" class="icons" alt=""
+        /></a>
+      </p>
+      <p>© Web 2022</p>
+    </footer>
+    <script>
+      function sleep(milliseconds) {
+        const date = Date.now();
+        let currentDate = null;
+        do {
+          currentDate = Date.now();
+        } while (currentDate - date < milliseconds);
+      }
+      var loader = document.getElementById("preloader");
+      window.addEventListener("load", function () {
+        sleep(100);
+        loader.style.display = "none";
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.12.0/video.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.6.1/Youtube.min.js"></script>
+  </body>
 </html>
